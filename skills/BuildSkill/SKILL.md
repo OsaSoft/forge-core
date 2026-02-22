@@ -1,8 +1,7 @@
 ---
 name: BuildSkill
+version: 0.1.0
 description: "Create and validate skills for forge modules. USE WHEN create skill, new skill, write skill, validate skill, check skill, skill structure, skill conventions."
-metadata:
-    version: 0.1.0
 ---
 
 # BuildSkill
@@ -31,9 +30,9 @@ description: What it does. USE WHEN trigger phrase one, trigger phrase two, or t
 
 **Frontmatter rules:**
 - `name:` -- PascalCase for multi-word (e.g., `VaultOperations`, `DailyPlan`), natural casing for single words (e.g., `Log`, `Draft`, `Init`)
+- `version:` -- semantic version (required for module skills, optional for personal/vault skills)
 - `description:` -- single line, under 1024 characters, includes `USE WHEN` with intent-based triggers joined by commas/OR
 - Optional: `argument-hint:` for skills invoked with `/SkillName <args>` (e.g., `"[natural language description]"`)
-- Optional: `version:` for versioned skills
 - No separate `triggers:` or `workflows:` arrays in YAML
 
 ### Body Structure
@@ -119,6 +118,14 @@ user:                                 # free-form namespace (personal metadata)
 
 The sidecar is also the landing zone for Obsidian Linter — any `title:`, `aliases:`, `tags:`, or other vault metadata the Linter injects lands here, not in the canon. The `user:` namespace is free-form for personal metadata.
 
+**Minimal sidecar** (skills without external references or provider-specific config):
+
+```yaml
+sources: []
+```
+
+Every SKILL.yaml must have `sources:` even if empty. Add `claude:` keys only when needed (argument-hint, model override, etc.).
+
 **Why separate files?** Obsidian's Linter reformats frontmatter on save -- it adds `title:`, reorders keys, and may strip unrecognized fields like `name:`. Separating prevents cross-contamination.
 
 ### Multi-Provider Routing
@@ -134,9 +141,11 @@ skills:
         SkillName:
     codex:
         SkillName:
+    opencode:
+        SkillName:
 ```
 
-Skills listed under a provider key are installed for that provider. Skills omitted from a provider's list are skipped. This allows Claude-only skills (e.g., those using TeamCreate or agent teams) to be excluded from Gemini/Codex without per-skill configuration.
+Skills listed under a provider key are installed for that provider. Skills omitted from a provider's list are skipped. This allows Claude-only skills (e.g., those using TeamCreate or agent teams) to be excluded from Gemini/Codex/OpenCode without per-skill configuration.
 
 ---
 

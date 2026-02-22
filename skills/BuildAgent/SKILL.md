@@ -1,8 +1,7 @@
 ---
 name: BuildAgent
+version: 0.1.0
 description: "Create, validate, or audit agent definitions. USE WHEN create agent, new agent, build agent, scaffold agent, validate agent, audit agents, agent conventions, agent frontmatter."
-metadata:
-    version: 0.1.0
 ---
 
 # BuildAgent
@@ -66,13 +65,13 @@ version: 0.1.0
 | `description` | Yes | Pattern: `"Role -- capabilities. USE WHEN triggers."` |
 | `version` | Yes | Semantic version |
 
-Model and tool assignments live in `defaults.yaml`:
+Model and tool assignments live in `defaults.yaml` (map format, keyed by agent name):
 
 ```yaml
 agents:
-    - name: SecurityArchitect
-      model: fast
-      tools: Read, Grep, Glob, Bash
+    SecurityArchitect:
+        model: fast
+        tools: Read, Grep, Glob, Bash
 ```
 
 **Semantic model tiers:**
@@ -81,6 +80,8 @@ agents:
 |------|---------|---------|
 | fast | sonnet / gemini-2.0-flash | Implementation, analysis, most specialist work |
 | strong | opus / gemini-2.5-pro | Deep reasoning, critical decisions |
+
+Model tiers resolve to concrete model IDs via the `providers:` section in defaults.yaml. Each provider maps `fast` and `strong` to its own model.
 
 ### Body Structure
 
@@ -146,7 +147,20 @@ make install-agents                        # all providers
 lib/bin/install-agents agents --scope user  # user-level install
 ```
 
+**Provider-specific behaviour:**
+
+| Provider | Format | Notes |
+|----------|--------|-------|
+| Claude | `.md` | Frontmatter + body, model/tools from defaults.yaml |
+| Gemini | `.md` | Name slugified (e.g., `code-helper`), tools mapped to Gemini equivalents |
+| Codex | `.toml` | TOML config in `.codex/config.toml`, agent prompt in `.codex/agents/` |
+| OpenCode | `.md` | Same format as Claude |
+
 Deployment adds a `# synced-from: OriginalFilename.md` header for provenance tracking. Tool mapping to provider equivalents happens automatically.
+
+**Critical**: `install-agents` reads provider keys from the `providers:` section in defaults.yaml to determine deployment targets. If a provider is missing from `providers:`, agents will not deploy there.
+
+**User-created detection**: If an agent file already exists in the target directory without a `# synced-from:` header, `install-agents` skips it to avoid overwriting user-created agents. When migrating from a committed provider dir to `agents/` source: delete the old file from disk first, then run `make install-agents`.
 
 ---
 
