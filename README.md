@@ -1,8 +1,13 @@
 # forge-core
 
-Development platform for the forge ecosystem. Skills for creating and validating forge artifacts — skills, agents, hooks, and modules — plus utilities like RTK.
+Module-building skills and operational tools for the forge ecosystem. Skills for creating and validating artifacts -- [skills][1], [agents][2], [hooks][3], and [modules][4] -- plus operational utilities for markdown linting, session management, and permissions auditing.
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) for the structural overview and design principles. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to create skills and contribute.
+
+[1]: https://docs.anthropic.com/en/docs/claude-code/skills "Claude Code Skills"
+[2]: https://docs.anthropic.com/en/docs/claude-code/sub-agents "Claude Code Sub-agents"
+[3]: https://docs.anthropic.com/en/docs/claude-code/hooks "Claude Code Hooks"
+[4]: skills/BuildModule/SKILL.md "Forge Module Convention"
 
 ## Skills
 
@@ -10,8 +15,11 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for the structural overview and design pr
 |-------|----------|-------------|
 | [**BuildSkill**](skills/BuildSkill/SKILL.md) | Skills | Create and validate skill definitions (SKILL.md structure, frontmatter, conventions) |
 | [**BuildAgent**](skills/BuildAgent/SKILL.md) | Agents | Scaffold, validate, and audit agent markdown files (frontmatter, body structure, deployment) |
-| [**BuildModule**](skills/BuildModule/SKILL.md) | Modules | Design and validate forge modules (directory layout, config convention, three-layer architecture) |
+| [**BuildModule**](skills/BuildModule/SKILL.md) | Modules | Design and validate modules (directory layout, config convention, three-layer architecture) |
 | [**BuildHook**](skills/BuildHook/SKILL.md) | Hooks | Hook registration, event handling, platform-specific wiring |
+| [**MarkdownLint**](skills/MarkdownLint/SKILL.md) | — | Format and lint markdown — backtick code references, fix bare URLs, heading hierarchy |
+| [**Sessions**](skills/Sessions/SKILL.md) | — | Claude Code session search, resume, and index repair |
+| [**Permissions**](skills/Permissions/SKILL.md) | — | Audit and clean Claude Code permissions in settings.local.json |
 | [**RTK**](skills/RTK/SKILL.md) | — | Token-optimized CLI proxy (60-90% savings) |
 
 ## Install

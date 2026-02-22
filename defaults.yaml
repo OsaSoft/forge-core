@@ -7,21 +7,44 @@ skills:
         BuildAgent:
         BuildModule:
         BuildHook:
+        MarkdownLint:
+        MarkdownSchema:
+        Permissions:
         RTK:
+        Sessions:
 
     gemini:
         BuildSkill:
         BuildAgent:
         BuildModule:
         BuildHook:
+        MarkdownLint:
+        MarkdownSchema:
+        Permissions:
         RTK:
+        Sessions:
 
     codex:
         BuildSkill:
         BuildAgent:
         BuildModule:
         BuildHook:
+        MarkdownLint:
+        MarkdownSchema:
+        Permissions:
         RTK:
+        Sessions:
+
+    opencode:
+        BuildSkill:
+        BuildAgent:
+        BuildModule:
+        BuildHook:
+        MarkdownLint:
+        MarkdownSchema:
+        Permissions:
+        RTK:
+        Sessions:
 
 hooks:
     PlanCopy:

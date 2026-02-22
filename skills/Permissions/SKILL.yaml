@@ -1,0 +1,2 @@
+name: Permissions
+description: Audit and clean `.claude/settings.local.json` permissions. USE WHEN the user asks to review permissions, clean up settings, audit allowed commands, or mentions settings.local.json cruft.
