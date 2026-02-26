@@ -1,6 +1,5 @@
 # forge-core Makefile
 
-SKILLS   = BuildSkill BuildAgent BuildModule
 SKILL_SRC = skills
 LIB_DIR  = $(or $(FORGE_LIB),lib)
 
