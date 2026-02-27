@@ -211,6 +211,8 @@ Run this checklist against any module to audit compliance. Report pass/fail per 
 | Check | Pass criteria |
 |-------|---------------|
 | `README.md` | Exists, not empty |
+| `INSTALL.md` | Exists, starts with `> **For AI agents**: This guide covers installation of [module].` |
+| `VERIFY.md` | Exists, starts with `> **For AI agents**: Complete this checklist after installation.` |
 | `CLAUDE.md` | Exists (Claude Code project instructions) |
 | `AGENTS.md` | Exists (Codex/OpenCode project overview) |
 | `GEMINI.md` | Exists (Gemini CLI project context) |
