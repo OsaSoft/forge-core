@@ -12,6 +12,8 @@ description: "RTK (Rust Token Killer) — token-optimized CLI proxy for Claude C
 
 **Always prefix commands with `rtk`**. If RTK has a dedicated filter, it uses it. If not, it passes through unchanged. This means RTK is always safe to use.
 
+RTK calls binaries directly — shell aliases are bypassed. No `command` prefix needed. Use `command` only for alias-prone commands RTK doesn't cover (`cd`, `cp`, `mv`, `rm`).
+
 **Important**: Even in command chains with `&&`, use `rtk`:
 ```bash
 # Wrong
