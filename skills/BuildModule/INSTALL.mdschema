@@ -8,18 +8,11 @@ structure:
     - heading: '# Install'
       allow_additional: true
       children:
-        - heading: '## Prerequisites'
+        - heading: '## Requirements'
         - heading:
-            pattern: '## .*(Build|Deploy|Standalone).*$'
+            pattern: '## .*(Build|Deploy).*$'
             regex: true
-          allow_additional: true
-        - heading:
-            pattern: '## (Dependencies|Requirements)$'
-            regex: true
-          optional: true
-        - heading:
-            pattern: '## (Platform Notes|Platforms)$'
-            regex: true
+        - heading: '## Platforms'
           optional: true
         - heading: '## Configuration'
           optional: true

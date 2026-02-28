@@ -8,13 +8,11 @@ structure:
     - heading: '# Verify'
       allow_additional: true
       children:
-        - heading:
-            pattern: '## (Verify|Quick check|Check)$'
-            regex: true
-        - heading: '## Structure'
+        - heading: '## Health check'
+        - heading: '## Structure validation'
           optional: true
-        - heading:
-            pattern: '## (Reporting Results|Expected [Rr]esults)$'
-            regex: true
+        - heading: '## Functionality tests'
+          optional: true
+        - heading: '## Success criteria'
         - heading: '## Troubleshooting'
           optional: true
