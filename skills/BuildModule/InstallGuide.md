@@ -40,21 +40,21 @@ All checks required:
 | Check | Pass criteria |
 |-------|---------------|
 | AI notice | First blockquote mentions "AI agents" |
-| Prerequisites | Heading matching "Prerequisites" with numbered items |
-| Build / Deploy | Heading matching "Build" or "Deploy" with a code block |
-| Dependencies | Markdown table with "Dependency" or "Required" column |
-| Verify | Heading matching "Verify" or `make verify` in a code block |
+| Requirements | `## Requirements` heading with numbered items |
+| Build / Deploy | Heading matching `## .*(Build\|Deploy).*` with a code block |
+| Platforms | `## Platforms` heading (optional — required for Full tier) |
+| Configuration | `## Configuration` heading (optional) |
 
 ## Full
 
-Standard checks plus Windows support:
+Standard checks plus cross-platform support:
 
 | Check | Pass criteria |
 |-------|---------------|
 | POSIX section | Code block with `bash` or `sh` fence under Build heading |
 | PowerShell fallback | `powershell` code block or heading containing "PowerShell" / "Windows" |
 | PowerShell content | PowerShell blocks contain `.exe` or `cargo build` (not POSIX pasted in) |
-| Platform Notes | Heading containing "Platform" with "Windows" in the section body |
+| Platforms | `## Platforms` heading with Windows mentioned in the section body |
 
 ## Status Levels
 

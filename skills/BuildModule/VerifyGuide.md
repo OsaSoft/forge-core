@@ -13,16 +13,16 @@ Same tier as INSTALL.md (Scaffold / Standard / Full). See @InstallGuide.md for d
 | Check | Pass criteria |
 |-------|---------------|
 | AI notice | First line is blockquote or paragraph mentioning "AI agents" |
-| Structure check | Has at least one check with a bash code block |
+| Health check | Has at least one check with a bash code block |
 
 ## Standard
 
 | Check | Pass criteria |
 |-------|---------------|
 | AI notice | First line is blockquote or paragraph mentioning "AI agents" |
-| Directory structure | Check verifying expected files exist (skills, plugin.json) |
-| Deployment | Check verifying provider directories (`.claude/`, `.gemini/`, `.codex/`, `.opencode/`) |
-| Expected results | Final section summarizing pass criteria |
+| Health check | `## Health check` heading with quick verification commands |
+| Structure validation | `## Structure validation` heading verifying expected files (optional) |
+| Success criteria | `## Success criteria` heading summarizing pass/fail |
 
 ## Full
 
@@ -30,9 +30,9 @@ Standard checks plus:
 
 | Check | Pass criteria |
 |-------|---------------|
-| Binary availability | Check that compiled binaries exist or respond to `--version` / `--help` |
+| Health check | Includes binary availability checks (`--version` / `--help`) |
+| Functionality tests | `## Functionality tests` heading with at least one functional test |
 | Test suite | `cargo test` command with expected test count |
-| Manual checks | At least one functional test (not just file existence) |
 
 ## Status Levels
 
