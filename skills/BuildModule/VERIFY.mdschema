@@ -16,3 +16,5 @@ structure:
         - heading:
             pattern: '## (Reporting Results|Expected [Rr]esults)$'
             regex: true
+        - heading: '## Troubleshooting'
+          optional: true

@@ -21,3 +21,7 @@ structure:
             pattern: '## (Platform Notes|Platforms)$'
             regex: true
           optional: true
+        - heading: '## Configuration'
+          optional: true
+        - heading: '## Troubleshooting'
+          optional: true
