@@ -1,0 +1,18 @@
+# VERIFY.md schema for forge modules
+
+heading_rules:
+    no_skip_levels: true
+    max_depth: 3
+
+structure:
+    - heading: '# Verify'
+      allow_additional: true
+      children:
+        - heading:
+            pattern: '## (Verify|Quick check|Check)$'
+            regex: true
+        - heading: '## Structure'
+          optional: true
+        - heading:
+            pattern: '## (Reporting Results|Expected [Rr]esults)$'
+            regex: true
