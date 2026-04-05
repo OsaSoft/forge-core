@@ -62,20 +62,20 @@ Step-by-step procedure. Use plain numbered lists for sequential operations.
 
 ### Where Skills Live
 
-| Location | Purpose |
-|----------|---------|
-| `skills/SkillName/` | Module skills (shipped with a module) |
-| User vault workspace | Personal/experimental skills |
+| Location             | Purpose                               |
+|----------------------|---------------------------------------|
+| `skills/SkillName/`  | Module skills (shipped with a module) |
+| User vault workspace | Personal/experimental skills          |
 
 All parent directories must be registered in `plugin.json` under the `skills` array for Claude Code discovery. Other providers (Gemini, Codex, OpenCode) use `make install` from the module's Makefile.
 
 ### Naming Conventions
 
-| Component | Convention | Examples |
-|-----------|-----------|----------|
-| Skill directory | PascalCase | `BuildSkill`, `DailyPlan`, `VaultOperations` |
-| Single-word skill | Natural case | `Log`, `Draft`, `Init`, `Update` |
-| SKILL.md | Always `SKILL.md` | -- |
+| Component         | Convention       | Examples                                       |
+|-------------------|------------------|------------------------------------------------|
+| Skill directory   | PascalCase       | `BuildSkill`, `DailyPlan`, `VaultOperations`   |
+| Single-word skill | Natural case     | `Log`, `Draft`, `Init`, `Update`               |
+| SKILL.md          | Always `SKILL.md` | --                                             |
 
 ### CLI Tool Integration
 
@@ -90,10 +90,10 @@ When a skill wraps a CLI tool (Rust binary, shell script), include:
 
 Module skills use two files side by side:
 
-| File | Purpose | Contains |
-|------|---------|----------|
-| `SKILL.md` | **Canon** -- frontmatter + skill body | `name:`, `description:`, `version:`, instructions |
-| `SKILL.yaml` | **Sidecar** -- everything else | `sources:`, provider keys, Obsidian metadata |
+| File          | Purpose                               | Contains                                           |
+|---------------|---------------------------------------|----------------------------------------------------|
+| `SKILL.md`    | **Canon** -- frontmatter + skill body | `name:`, `description:`, `version:`, instructions  |
+| `SKILL.yaml`  | **Sidecar** -- everything else        | `sources:`, provider keys, Obsidian metadata       |
 
 **SKILL.yaml must NOT duplicate SKILL.md fields** -- no `name:` or `description:` in the sidecar. It carries supplementary data:
 
@@ -125,6 +125,10 @@ sources: []
 ```
 
 Every SKILL.yaml must have `sources:` even if empty. Add `claude:` keys only when needed (argument-hint, model override, etc.).
+
+### Example File
+
+Skills should ship with an `Example.md` demo file showing a concrete invocation and expected output. This makes each skill self-documenting and demoable without reading the full SKILL.md.
 
 **Why separate files?** Obsidian's Linter reformats frontmatter on save -- it adds `title:`, reorders keys, and may strip unrecognized fields like `name:`. Separating prevents cross-contamination.
 

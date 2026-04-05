@@ -1,56 +1,84 @@
 # forge-core default configuration.
 # Override: create config.yaml (gitignored) with only the fields you want to change.
 
+# Architecture Decision Records (https://adr.github.io/)
+adr:
+    prefix: number                      # "date" → YYYY-MM-DD  |  "number" → NNNN
+    directory: docs/decisions
+    template: templates/madr.md
+    full_template: templates/adr.md
+    schema: docs/decisions/.mdschema
+
 skills:
     claude:
+        AdaptPrompts:
         BuildSkill:
         BuildAgent:
         BuildModule:
         BuildHook:
+        ArchitectureDecision:
+        VersionControl:
         MarkdownLint:
         MarkdownSchema:
         SettingsMaintenance:
         SystemCheck:
         RTK:
-        Sessions:
+        PublishPrompts:
 
     gemini:
+        AdaptPrompts:
         BuildSkill:
         BuildAgent:
         BuildModule:
         BuildHook:
+        ArchitectureDecision:
+        VersionControl:
         MarkdownLint:
         MarkdownSchema:
         SettingsMaintenance:
         SystemCheck:
         RTK:
-        Sessions:
+        PublishPrompts:
 
     codex:
+        AdaptPrompts:
         BuildSkill:
         BuildAgent:
         BuildModule:
         BuildHook:
+        ArchitectureDecision:
+        VersionControl:
         MarkdownLint:
         MarkdownSchema:
         SettingsMaintenance:
         SystemCheck:
         RTK:
-        Sessions:
+        PublishPrompts:
 
     opencode:
+        AdaptPrompts:
         BuildSkill:
         BuildAgent:
         BuildModule:
         BuildHook:
+        ArchitectureDecision:
+        VersionControl:
         MarkdownLint:
         MarkdownSchema:
         SettingsMaintenance:
         SystemCheck:
         RTK:
-        Sessions:
+        PublishPrompts:
 
 hooks:
     PlanCopy:
         destination: Resources/Plans/Claude
         template: templates/plan.md
+    ArchitectureDecision:
+        prompt: >-
+            Invoke the ArchitectureDecision skill to check for uncaptured architectural decisions
+            from the previous context. Spawn a background Agent to review the session for architectural
+            decisions, pattern choices, or convention changes that should be captured as ADRs in
+            docs/decisions/. Have the agent read the transcript JSONL from the session files below.
+            Use the MADR light template (templates/madr.md).
+            If c0ntextkeeper is installed, use the ContextKeeper skill to recover additional session details.
