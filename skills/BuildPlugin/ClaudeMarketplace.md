@@ -95,6 +95,6 @@ Cannot use: `claude-code-marketplace`, `claude-code-plugins`, `claude-plugins-of
 
 After pushing, trigger sync in Cowork: Settings > Plugins > Sync marketplace. The plugin should appear in the available plugins list.
 
-[1]: https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization
-[2]: https://code.claude.com/docs/en/plugin-marketplaces
-[3]: https://code.claude.com/docs/en/plugins-reference
+[COWORK]: https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization
+[MARKETPLACE]: https://code.claude.com/docs/en/plugin-marketplaces
+[PLUGINS-REF]: https://code.claude.com/docs/en/plugins-reference
