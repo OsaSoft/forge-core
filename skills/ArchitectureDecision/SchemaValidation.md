@@ -7,7 +7,9 @@ Validate ADR frontmatter against JSON schemas. Two schemas are available:
 | `templates/structured-madr.json` | Upstream [structured-madr][MADR] | title, description, type, category, tags, status, created, updated, author, project |
 | `templates/forge-adr.json`       | Forge ecosystem               | structured-madr + RACI, upstream, related                                           |
 
-The upstream [structured-madr][MADR] validator is sufficient for both schemas — forge-adr.json is a superset, and the validator accepts any schema file.
+Use the fork of [structured-madr validator][FORK] — the upstream validator enforces body structure that doesn't match the forge-adr template (N4M3Z/forge-core#8).
+
+[FORK]: https://github.com/N4M3Z/structured-madr
 
 ## Validation (preference order)
 

@@ -16,22 +16,10 @@ jobs:
               with:
                   python-version: "3.12"
 
-            - uses: dtolnay/rust-toolchain@stable
-              if: hashFiles('Cargo.toml') != ''
-
-            - uses: actions/setup-node@v4
-              if: hashFiles('**/*.ts') != ''
-              with:
-                  node-version: "22"
-
             - name: Install tools
               run: |
                   pip install pyyaml ruff
-                  GITLEAKS_URL=$(curl -s https://api.github.com/repos/gitleaks/gitleaks/releases/latest | grep -o 'https://.*linux_x64.tar.gz')
-                  curl -sSfL "$GITLEAKS_URL" | tar xz -C /usr/local/bin
+                  curl -sSfL "$(curl -s https://api.github.com/repos/gitleaks/gitleaks/releases/latest | grep -o 'https://[^"]*linux_x64.tar.gz')" | tar xz -C /usr/local/bin
 
             - name: Validate
-              run: make validate
-
-            - name: Test
-              run: make test
+              uses: j178/prek-action@v2

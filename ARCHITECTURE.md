@@ -312,14 +312,14 @@ Each deployed rule produces three artifacts:
 
 ## Prompt Validation
 
-The PromptProvenance skill validates rules, skills, and agents for targeting correctness, redundancy, and provenance quality. It runs in two modes: **scan** (static analysis) and **deep** (behavioral testing via PromptFoo ablation).
+The PromptAnalysis skill validates rules, skills, and agents for targeting correctness, redundancy, and provenance quality. It runs in two modes: **scan** (static analysis) and **deep** (behavioral testing via PromptFoo ablation).
 
 ### Scan Mode (Static Analysis)
 
 Scans all rules in a module and flags issues without calling any AI model:
 
 ```ascii
-rules/*.md                           PromptProvenance scan
+rules/*.md                           PromptAnalysis scan
 ┌──────────────────────┐
 │ UseRTK.md            │──┐
 │ ShellAliases.md      │──┤          ┌─────────────────────┐
