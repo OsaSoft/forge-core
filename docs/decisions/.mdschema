@@ -47,22 +47,23 @@ structure:
       allow_additional: true
       children:
           - heading:
-                pattern: "^## (Context and Problem Statement|Context)$"
-                regex: true
+                pattern: "## Context and Problem Statement"
+            allow_additional: true
             word_count:
                 min: 20
           - heading:
                 pattern: "## Decision Drivers"
             optional: true
+            allow_additional: true
             lists:
                 - min: 1
           - heading:
                 pattern: "## Considered Options"
+            allow_additional: true
             lists:
                 - min: 1
           - heading:
-                pattern: "^## (Decision Outcome|Decision)$"
-                regex: true
+                pattern: "## Decision Outcome"
             allow_additional: true
             children:
                 - heading:
