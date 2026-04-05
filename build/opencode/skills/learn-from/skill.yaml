@@ -1,0 +1,23 @@
+provenance:
+    _type: https://in-toto.io/Statement/v1
+    subject:
+        - name: opencode/skills/learn-from/skill.md
+          digest:
+              sha256: 1759d19479ae454fea8d3317b60d76f8998996bc2a5e84e0b1a24913c401f741
+    predicateType: https://slsa.dev/provenance/v1
+    predicate:
+        buildDefinition:
+            buildType: https://github.com/N4M3Z/forge-cli/assemble/v1
+            externalParameters:
+                source: forge-core
+            resolvedDependencies:
+                - uri: skills/LearnFrom/SKILL.md
+                  digest:
+                      sha256: ee5c4b673b70db141e6879443e970effd760a8d106a48a9c2039973dfca31920
+        runDetails:
+            builder:
+                id: forge-cli
+                version:
+                    forge: 0.2.0
+            metadata:
+                startedOn: "2026-04-05T14:27:41.340072+00:00"

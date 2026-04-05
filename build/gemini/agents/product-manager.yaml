@@ -1,0 +1,23 @@
+provenance:
+    _type: https://in-toto.io/Statement/v1
+    subject:
+        - name: gemini/agents/product-manager.md
+          digest:
+              sha256: d8acae3e8b9e53dfb96c7a4b3e2f8f00c636c822591e09c7f8fca1852d185fcb
+    predicateType: https://slsa.dev/provenance/v1
+    predicate:
+        buildDefinition:
+            buildType: https://github.com/N4M3Z/forge-cli/assemble/v1
+            externalParameters:
+                source: forge-core
+            resolvedDependencies:
+                - uri: agents/ProductManager.md
+                  digest:
+                      sha256: e93c3c489bec98493d24de319493049345242b695e61111dcf36fc19f79c4b45
+        runDetails:
+            builder:
+                id: forge-cli
+                version:
+                    forge: 0.2.0
+            metadata:
+                startedOn: "2026-04-05T14:27:41.399740+00:00"

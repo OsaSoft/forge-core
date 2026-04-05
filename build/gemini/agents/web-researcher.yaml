@@ -1,0 +1,23 @@
+provenance:
+    _type: https://in-toto.io/Statement/v1
+    subject:
+        - name: gemini/agents/web-researcher.md
+          digest:
+              sha256: e54d160f93714ffca1a8ce00a8a456d98e40ced2b2356574639d9f669eab6cce
+    predicateType: https://slsa.dev/provenance/v1
+    predicate:
+        buildDefinition:
+            buildType: https://github.com/N4M3Z/forge-cli/assemble/v1
+            externalParameters:
+                source: forge-core
+            resolvedDependencies:
+                - uri: agents/WebResearcher.md
+                  digest:
+                      sha256: a54a0ff5c0c42d670aee4ea9da9253d64db3fec15d9a335cd0ad6ea21168c52b
+        runDetails:
+            builder:
+                id: forge-cli
+                version:
+                    forge: 0.2.0
+            metadata:
+                startedOn: "2026-04-05T14:27:41.400999+00:00"

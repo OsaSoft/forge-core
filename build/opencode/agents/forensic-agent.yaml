@@ -1,0 +1,23 @@
+provenance:
+    _type: https://in-toto.io/Statement/v1
+    subject:
+        - name: opencode/agents/forensic-agent.md
+          digest:
+              sha256: 748b24a2826354a7e38d02140dc47f154bb4e20082c4864a936f5223b4736e8d
+    predicateType: https://slsa.dev/provenance/v1
+    predicate:
+        buildDefinition:
+            buildType: https://github.com/N4M3Z/forge-cli/assemble/v1
+            externalParameters:
+                source: forge-core
+            resolvedDependencies:
+                - uri: agents/ForensicAgent.md
+                  digest:
+                      sha256: b06f4fb87ad306c1c1ba532ae0f66f45424045a6709dcb8a7ebd5b205139fb8e
+        runDetails:
+            builder:
+                id: forge-cli
+                version:
+                    forge: 0.2.0
+            metadata:
+                startedOn: "2026-04-05T14:27:41.329598+00:00"

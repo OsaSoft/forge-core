@@ -1,0 +1,23 @@
+provenance:
+    _type: https://in-toto.io/Statement/v1
+    subject:
+        - name: claude/rules/GitWorktrees.md
+          digest:
+              sha256: e8e3d1d7b4299bb317a28f5907f9032f3e7d108b41d30cfb3de1cf122176c575
+    predicateType: https://slsa.dev/provenance/v1
+    predicate:
+        buildDefinition:
+            buildType: https://github.com/N4M3Z/forge-cli/assemble/v1
+            externalParameters:
+                source: forge-core
+            resolvedDependencies:
+                - uri: rules/GitWorktrees.md
+                  digest:
+                      sha256: 9733759b05b1d83c424b6903537de181471cdef003ee08912fad0d49689e48d3
+        runDetails:
+            builder:
+                id: forge-cli
+                version:
+                    forge: 0.2.0
+            metadata:
+                startedOn: "2026-04-05T14:27:41.396684+00:00"

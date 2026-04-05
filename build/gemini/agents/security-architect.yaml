@@ -1,0 +1,23 @@
+provenance:
+    _type: https://in-toto.io/Statement/v1
+    subject:
+        - name: gemini/agents/security-architect.md
+          digest:
+              sha256: 2607b79189659cfd8524dd49bd59c6d9e31f1f35ea2dd15ddf7b9da2666cd135
+    predicateType: https://slsa.dev/provenance/v1
+    predicate:
+        buildDefinition:
+            buildType: https://github.com/N4M3Z/forge-cli/assemble/v1
+            externalParameters:
+                source: forge-core
+            resolvedDependencies:
+                - uri: agents/SecurityArchitect.md
+                  digest:
+                      sha256: 63a7b2bdd6f3b205c646cd4b508ee6b71ce63ec7ee049aef178da76c07da3115
+        runDetails:
+            builder:
+                id: forge-cli
+                version:
+                    forge: 0.2.0
+            metadata:
+                startedOn: "2026-04-05T14:27:41.401495+00:00"

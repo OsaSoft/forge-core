@@ -1,0 +1,23 @@
+provenance:
+    _type: https://in-toto.io/Statement/v1
+    subject:
+        - name: gemini/rules/drift-comparison.md
+          digest:
+              sha256: 3e0b6bdc4f03c7b98c48141848d0d63cd87296474479d6c94ede48e1c4caa6f6
+    predicateType: https://slsa.dev/provenance/v1
+    predicate:
+        buildDefinition:
+            buildType: https://github.com/N4M3Z/forge-cli/assemble/v1
+            externalParameters:
+                source: forge-core
+            resolvedDependencies:
+                - uri: rules/DriftComparison.md
+                  digest:
+                      sha256: 1438981b4a8b85000ccd758baef9e0eb7ea5620ef7317f691d6bd6d5bcfa3655
+        runDetails:
+            builder:
+                id: forge-cli
+                version:
+                    forge: 0.2.0
+            metadata:
+                startedOn: "2026-04-05T14:27:41.413663+00:00"

@@ -1,0 +1,23 @@
+provenance:
+    _type: https://in-toto.io/Statement/v1
+    subject:
+        - name: codex/rules/MarkdownReflinks.md
+          digest:
+              sha256: 36178bb4f44e4aad49cc1f5ed544ed406f51c4c2ba445f7647e862a40f9e22ca
+    predicateType: https://slsa.dev/provenance/v1
+    predicate:
+        buildDefinition:
+            buildType: https://github.com/N4M3Z/forge-cli/assemble/v1
+            externalParameters:
+                source: forge-core
+            resolvedDependencies:
+                - uri: rules/MarkdownReflinks.md
+                  digest:
+                      sha256: 72525b95150707589a457024dce53517e21a7e958936ccdf452c90e7cd5d8dc9
+        runDetails:
+            builder:
+                id: forge-cli
+                version:
+                    forge: 0.2.0
+            metadata:
+                startedOn: "2026-04-05T14:27:41.371270+00:00"

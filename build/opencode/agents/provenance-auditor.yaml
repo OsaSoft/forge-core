@@ -1,0 +1,23 @@
+provenance:
+    _type: https://in-toto.io/Statement/v1
+    subject:
+        - name: opencode/agents/provenance-auditor.md
+          digest:
+              sha256: 7cf2b9d9d2d7d4a0809a0c3e9c5409f8ba1781818ef742954766734d41b693c9
+    predicateType: https://slsa.dev/provenance/v1
+    predicate:
+        buildDefinition:
+            buildType: https://github.com/N4M3Z/forge-cli/assemble/v1
+            externalParameters:
+                source: forge-core
+            resolvedDependencies:
+                - uri: agents/ProvenanceAuditor.md
+                  digest:
+                      sha256: cd4476147b8a190f2ca89496da60625cb5b5324b017f50426c6e605463d1105a
+        runDetails:
+            builder:
+                id: forge-cli
+                version:
+                    forge: 0.2.0
+            metadata:
+                startedOn: "2026-04-05T14:27:41.330769+00:00"

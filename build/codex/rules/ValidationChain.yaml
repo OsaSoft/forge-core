@@ -1,0 +1,23 @@
+provenance:
+    _type: https://in-toto.io/Statement/v1
+    subject:
+        - name: codex/rules/ValidationChain.md
+          digest:
+              sha256: 1a3fdcc4892e5ad35ae7b6a84e6fd6ccac4e0ccd7bacec77956b3dda7afc45ea
+    predicateType: https://slsa.dev/provenance/v1
+    predicate:
+        buildDefinition:
+            buildType: https://github.com/N4M3Z/forge-cli/assemble/v1
+            externalParameters:
+                source: forge-core
+            resolvedDependencies:
+                - uri: rules/ValidationChain.md
+                  digest:
+                      sha256: 1f2fb2ea9c2ffb3f1ef2f4341cdabca32b527932840f81e958da34a7d0758b70
+        runDetails:
+            builder:
+                id: forge-cli
+                version:
+                    forge: 0.2.0
+            metadata:
+                startedOn: "2026-04-05T14:27:41.373426+00:00"

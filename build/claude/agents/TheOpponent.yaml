@@ -1,0 +1,23 @@
+provenance:
+    _type: https://in-toto.io/Statement/v1
+    subject:
+        - name: claude/agents/TheOpponent.md
+          digest:
+              sha256: cd2bff72b81e7b2df0425b1f9a2f8f25e55543dcf82212b44a503fb06ff3758d
+    predicateType: https://slsa.dev/provenance/v1
+    predicate:
+        buildDefinition:
+            buildType: https://github.com/N4M3Z/forge-cli/assemble/v1
+            externalParameters:
+                source: forge-core
+            resolvedDependencies:
+                - uri: agents/TheOpponent.md
+                  digest:
+                      sha256: 2799b799d31b6a401c8642160942c32c96e255fa1aed4cbad24e091094b96c35
+        runDetails:
+            builder:
+                id: forge-cli
+                version:
+                    forge: 0.2.0
+            metadata:
+                startedOn: "2026-04-05T14:27:41.378090+00:00"

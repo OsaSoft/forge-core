@@ -1,0 +1,23 @@
+provenance:
+    _type: https://in-toto.io/Statement/v1
+    subject:
+        - name: claude/agents/SecurityArchitect.md
+          digest:
+              sha256: b229a552ff61dd06d7ea237b163966746c1ac17877a9792a3274725db187f0e2
+    predicateType: https://slsa.dev/provenance/v1
+    predicate:
+        buildDefinition:
+            buildType: https://github.com/N4M3Z/forge-cli/assemble/v1
+            externalParameters:
+                source: forge-core
+            resolvedDependencies:
+                - uri: agents/SecurityArchitect.md
+                  digest:
+                      sha256: 63a7b2bdd6f3b205c646cd4b508ee6b71ce63ec7ee049aef178da76c07da3115
+        runDetails:
+            builder:
+                id: forge-cli
+                version:
+                    forge: 0.2.0
+            metadata:
+                startedOn: "2026-04-05T14:27:41.378305+00:00"
