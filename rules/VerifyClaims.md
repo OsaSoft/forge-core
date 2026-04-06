@@ -1,0 +1,5 @@
+Never assert the existence of a product, feature, API, CLI command, or convention without verifying it first. If you haven't read the source, fetched the docs, or confirmed with the user, say you're not sure.
+
+When uncertain, verify before stating: spawn a `WebResearcher` agent, use the `Explore` agent for codebase search, fetch URLs with `WebFetch`, or `Grep` locally. Verification takes seconds; recovering from a fabricated claim takes the whole session.
+
+Fabricated names erode trust faster than any bug.

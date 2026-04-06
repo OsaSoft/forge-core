@@ -12,7 +12,8 @@ created: 2026-02-20
 updated: 2026-03-30
 author: "@N4M3Z"
 project: forge-core
-related: []
+related:
+    - "ARCH-0008 Multi-Provider Support.md"
 responsible: ["@N4M3Z"]
 accountable: ["@N4M3Z"]
 consulted: []

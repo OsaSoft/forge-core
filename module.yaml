@@ -1,6 +1,7 @@
 name: forge-core
 version: 0.5.0
 description: Module-building skills and operational tools for the forge ecosystem.
+repository: https://github.com/N4M3Z/forge-core
 events:
   - SessionStart
   - PostToolUse

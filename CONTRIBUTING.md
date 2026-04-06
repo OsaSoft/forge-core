@@ -37,9 +37,7 @@ Internal authors promote a copy from their authoring environment (e.g., Obsidian
 git clone https://github.com/N4M3Z/forge-core.git
 cd forge-core
 make install    # deploy skills to all providers
-make check      # confirm prerequisites and module structure
-make test       # validate conventions
-make lint       # shellcheck all scripts
+make test       # validate + run ADR self-tests
 ```
 
 Prerequisites:
@@ -100,8 +98,7 @@ The companion lives in the same directory. The `@` reference injects its content
 
 ```bash
 make install    # deploy to providers
-make check      # confirm prerequisites
-make test       # check conventions
+make test       # validate + check conventions
 ```
 
 ## Hook Authoring
@@ -125,14 +122,6 @@ make test            # via Makefile
 forge validate .     # directly
 ```
 
-## Contributing via PR
-
-1. Fork the repository
-2. Create a branch for your change
-3. Make your changes following the conventions above
-4. Run `make test && make lint` to validate
-5. Open a PR against `main`
-
 ## Conventions
 
 ### Structural Requirements
@@ -150,3 +139,13 @@ If a skill's SKILL.md becomes difficult to follow as a single document, split it
 Conventional Commits: `type: description`. Lowercase, no trailing period, no scope.
 
 Types: `feat`, `fix`, `docs`
+
+## Pull Requests
+
+1. Fork the repository
+2. Create a branch for your change
+3. Make your changes following the conventions above
+4. Run `make test` to validate
+5. Open a PR against `main`
+
+CI runs validation on every PR. The `main` branch requires passing CI before merge.

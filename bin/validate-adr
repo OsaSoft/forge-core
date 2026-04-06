@@ -124,9 +124,16 @@ def validate(data, schema):
             if len(value) < prop["minLength"]:
                 problems.append(f"{key}: length {len(value)} < minLength {prop['minLength']}")
 
+        if "maxLength" in prop and isinstance(value, str):
+            if len(value) > prop["maxLength"]:
+                problems.append(f"{key}: length {len(value)} > maxLength {prop['maxLength']}")
+
         if expected_type == "array" and isinstance(value, list):
             if "minItems" in prop and len(value) < prop["minItems"]:
                 problems.append(f"{key}: {len(value)} items < minItems {prop['minItems']}")
+
+            if prop.get("uniqueItems") and len(value) != len(set(value)):
+                problems.append(f"{key}: duplicate items found")
 
             item_schema = prop.get("items", {})
             item_pattern = item_schema.get("pattern")
@@ -145,13 +152,14 @@ def run_tests():
     schema = {
         "required": ["title", "type", "status", "created", "tags"],
         "properties": {
-            "title": {"type": "string", "minLength": 1},
+            "title": {"type": "string", "minLength": 1, "maxLength": 100},
             "type": {"type": "string", "const": "adr"},
             "status": {"type": "string", "enum": ["proposed", "accepted", "deprecated", "superseded"]},
             "created": {"type": "string", "format": "date"},
             "tags": {
                 "type": "array",
                 "minItems": 1,
+                "uniqueItems": True,
                 "items": {"type": "string", "minLength": 1, "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$|^[a-z0-9]$"}
             },
         },
@@ -251,6 +259,22 @@ def run_tests():
         "tags": [""],
     }, False)
 
+    assert_test("duplicate tags", {
+        "title": "Test",
+        "type": "adr",
+        "status": "accepted",
+        "created": "2026-03-30",
+        "tags": ["architecture", "architecture"],
+    }, False)
+
+    assert_test("overlong title", {
+        "title": "A" * 101,
+        "type": "adr",
+        "status": "accepted",
+        "created": "2026-03-30",
+        "tags": ["architecture"],
+    }, False)
+
     print(f"\n{tests_passed} passed, {tests_failed} failed")
     return tests_failed == 0
 
@@ -318,7 +342,7 @@ def main():
     files = sorted(target.glob("*.md")) if target.is_dir() else [target]
 
     if not HAS_YAML:
-        print("  NOTE  pyyaml not installed, using regex fallback (type/format checks limited)")
+        print("  WARN  pyyaml not installed — skipping: nested YAML structure, date type coercion, multiline values. Install: pip install pyyaml")
 
     passed = 0
     failed = 0

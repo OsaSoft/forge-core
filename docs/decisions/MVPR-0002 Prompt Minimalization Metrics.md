@@ -35,7 +35,7 @@ The minimum viable prompt principle (MVPR-0001) requires knowing which rules eac
 
 ## Decision Outcome
 
-Chosen option: **static scan + behavioral confirmation on demand**, implemented as the PromptProvenance skill.
+Chosen option: **static scan + behavioral confirmation on demand**, implemented as the PromptAnalysis skill.
 
 **Scan mode** (static, no API calls):
 

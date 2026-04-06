@@ -17,7 +17,7 @@ responsible: ["@N4M3Z"]
 accountable: ["@N4M3Z"]
 consulted: []
 informed: []
-upstream: []
+upstream: ["forge-cli/ASSEMBLY-0002"]
 ---
 
 # Provenance Tracking

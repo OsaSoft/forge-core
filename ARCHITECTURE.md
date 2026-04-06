@@ -276,7 +276,7 @@ Always prefix shell commands with `rtk`...
 
 This rule deploys to Claude and Codex, skipped for Gemini. The `targets:` field also documents intent -- if qualifier directories are lost, frontmatter records which providers the rule was meant for.
 
-See [ADR 0018](docs/decisions/CORE-0018 Qualifier Directories for Model Targeting.md).
+See [PROV-0005](docs/decisions/PROV-0005 Qualifier Directories for Model Targeting.md).
 
 ### Variant Merge Modes
 
@@ -296,7 +296,7 @@ Always parameterize SQL queries [OWASP].
 [OWASP]: https://cheatsheetseries.owasp.org/cheatsheets/Query_Parameterization_Cheat_Sheet.html
 ```
 
-At deploy time, reference markers and the reference block are stripped from the deployed file. The extracted URLs flow into the `.prov.yaml` `sources:` array. See [ADR 0017](docs/decisions/CORE-0017 GFM Reference Links for Prompt Provenance.md) and [ADR 0020](docs/decisions/CORE-0020 W3C PROV Provenance Records.md).
+At deploy time, reference markers and the reference block are stripped from the deployed file. The extracted URLs flow into the `.prov.yaml` `sources:` array. See [PROV-0004](docs/decisions/PROV-0004 Reference Links for Prompt Provenance.md) and [PROV-0003](docs/decisions/PROV-0003 Provenance Tracking.md).
 
 ### Output Summary
 
@@ -308,7 +308,7 @@ Each deployed rule produces three artifacts:
 | `Rule.prov.yaml` | Provenance record | W3C PROV: what was derived from what, by which builder, citing which sources |
 | `.manifest` | Integrity | `digest: { source: sha, deployed: sha }` per module per file |
 
-`source` SHA tracks git drift (did the source change since install?). `deployed` SHA tracks tampering (did the deployed file change since install?). See [ADR 0019](docs/decisions/CORE-0019 Dual SHA Manifest.md).
+`source` SHA tracks git drift (did the source change since install?). `deployed` SHA tracks tampering (did the deployed file change since install?). See [PROV-0002](docs/decisions/PROV-0002 Manifest for Deployment Tracking.md).
 
 ## Prompt Validation
 
@@ -392,7 +392,7 @@ add targets:          resolve variant             check provenance
                       (token-clean)             (actionable findings)
 ```
 
-See [CORE-0022](docs/decisions/CORE-0022 Prompt Minimalization.md).
+See [MVPR-0002](docs/decisions/MVPR-0002 Prompt Minimalization Metrics.md).
 
 ## Prompt Inheritance
 
@@ -416,7 +416,7 @@ Adapted files are maintenance debt -- every upstream change needs manual review.
 - Split into companion files: keep upstream `SKILL.md` pristine, add a derived-specific companion with local extensions
 - Rename complete rewrites to break false inheritance (own file, own name, not tracked against upstream)
 
-See [ADR 0016](docs/decisions/CORE-0016 Manifest-Based Inheritance.md) for the full decision record.
+See [PROV-0002](docs/decisions/PROV-0002 Manifest for Deployment Tracking.md) for the full decision record.
 
 ## Separation of Concerns
 
@@ -503,7 +503,7 @@ Both exist. Hooks are preferred for anything that can be automated. Markdown cov
 - `SKILL.yaml` never duplicates fields from `SKILL.md`
 - Skill directories use subdirectories for `user/` overlays, model qualifiers, and support files — companion `.md` files live at the root alongside `SKILL.md`
 - Agent names are PascalCase, unique across all vaults
-- `defaults.yaml` is the single source of truth for the skill roster
+- Skills are discovered from `skills/` directories — no explicit roster in config
 - Skills require structural decomposition (main skill + companion files) when complexity warrants it
 
 ## References

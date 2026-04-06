@@ -68,7 +68,7 @@ List what was captured: rules created or updated, skills updated, agents updated
 
 ## Constraints
 
-- Never write a rule that duplicates an existing one — check `rules/` first
+- Never write a rule that duplicates an existing one — check `rules/` first. Prefer adding to an existing rule over creating a new file when the learning fits an existing topic
 - Keep rules concise (max 120 words per section per the rules `.mdschema`)
 - New rules follow the `.mdschema` in `rules/` if present
 - Apply the reusability filter strictly — session-specific fixes are not rules

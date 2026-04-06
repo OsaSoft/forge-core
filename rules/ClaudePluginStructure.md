@@ -1,4 +1,4 @@
-Claude Code plugin structure and auto-discovery conventions ([plugins reference][1], [creating plugins][2]).
+Claude Code plugin structure and auto-discovery conventions ([plugins reference][CCPLUGINS], [creating plugins][CCCREATE]).
 
 Auto-discovered directories from a plugin:
 
@@ -15,7 +15,7 @@ Auto-discovered directories from a plugin:
 
 Not discovered: `rules/`, `CLAUDE.md`, `memory/`. These only load from project-level (`.claude/`) and user-level (`~/.claude/`) paths.
 
-`bin/` is flat — files directly inside are added to the Bash tool's PATH ([plugins reference][1]). No subdirectory recursion. Use extensionless names with shebangs and `chmod +x`.
+`bin/` is flat — files directly inside are added to the Bash tool's PATH ([plugins reference][CCPLUGINS]). No subdirectory recursion. Use extensionless names with shebangs and `chmod +x`.
 
 Environment variables available in hook commands and subprocesses:
 
@@ -32,5 +32,5 @@ To deliver always-on domain knowledge from a plugin, use a SessionStart hook tha
 
 Manifest at `.claude-plugin/plugin.json` — `name` (kebab-case) is the only required field.
 
-[1]: https://code.claude.com/docs/en/plugins-reference
-[2]: https://code.claude.com/docs/en/plugins
+[CCPLUGINS]: https://code.claude.com/docs/en/plugins-reference
+[CCCREATE]: https://code.claude.com/docs/en/plugins

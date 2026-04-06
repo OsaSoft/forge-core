@@ -3857,7 +3857,7 @@
     }
   },
   "config": {
-    "description": "PromptProvenance ablation test — 3 forge-core rules",
+    "description": "PromptAnalysis ablation test — 3 forge-core rules",
     "prompts": [
       {
         "label": "with-noheredoc",

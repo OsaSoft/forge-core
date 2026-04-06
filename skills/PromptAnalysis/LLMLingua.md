@@ -38,7 +38,7 @@ print(f"Compressed text:\n{result['compressed_prompt']}")
 
 ## How the Skill Uses It
 
-When invoked via `/PromptProvenance compress`, the skill:
+When invoked via `/PromptAnalysis compress`, the skill:
 
 1. Reads each rule file in the module
 2. Runs LLMLingua compression at 50% rate
@@ -46,7 +46,7 @@ When invoked via `/PromptProvenance compress`, the skill:
 4. Rules that resist compression (<30% reduction) contain novel information the model needs
 
 ```
-PromptProvenance Compress: forge-core (27 rules)
+PromptAnalysis Compress: forge-core (27 rules)
 
 HIGH COMPRESSION (likely redundant)
   SanitizeData.md ........ 73% compressible — model knows sanitization natively

@@ -3,3 +3,5 @@ Conventional Commits: `type: description`. Lowercase, no trailing period, no sco
 Default branch is `main`. Never use `master` — when creating repos, initializing branches, or referencing the default branch in docs and scripts.
 
 Never add `Co-Authored-By` trailers to git commits unless the user explicitly asks to co-author.
+
+Before pushing to main, squash fix/chore/test commits into their parent `feat:` commit. Git history on main should read as a sequence of features, not a trail of corrections.

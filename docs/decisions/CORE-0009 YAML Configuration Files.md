@@ -11,7 +11,8 @@ created: 2026-02-19
 updated: 2026-03-30
 author: "@N4M3Z"
 project: forge-core
-related: []
+related:
+    - "CORE-0008 Variables in Markdown Instructions and Templates.md"
 responsible: ["@N4M3Z"]
 accountable: ["@N4M3Z"]
 consulted: []

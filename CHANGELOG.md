@@ -30,3 +30,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 - ARCHITECTURE.md updated with user/ overlay pattern and skill subdirectory flattening
 - CLAUDE.md regenerated with current architecture and conventions
 - History squashed to clean commits
+
+[Unreleased]: https://github.com/N4M3Z/forge-core/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/N4M3Z/forge-core/releases/tag/v0.5.0

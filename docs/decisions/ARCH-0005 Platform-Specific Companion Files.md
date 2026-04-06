@@ -18,7 +18,7 @@ responsible: ["@N4M3Z"]
 accountable: ["@N4M3Z"]
 consulted: []
 informed: []
-upstream: [GeminiAgents.md, CodexAgents.md]
+upstream: [AgentTeams.md]
 ---
 
 # Platform-Specific Companion Files

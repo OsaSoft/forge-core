@@ -1,4 +1,4 @@
-description: "PromptProvenance ablation test — 3 forge-core rules"
+description: "PromptAnalysis ablation test — 3 forge-core rules"
 
 providers:
     - id: anthropic:claude-sonnet-4-6

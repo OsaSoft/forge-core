@@ -4,4 +4,6 @@ Required frontmatter: `title`, `description`, `type`, `category`, `tags`, `statu
 
 Before proposing architectural changes or challenging existing patterns, check the project's ADRs via the ArchitectureDecision skill. Do not contradict an accepted ADR without explicitly acknowledging it and proposing a superseding record.
 
+After writing an ADR with body-level links to other ADRs, backfill those references into the `related:` frontmatter field. Body links are for human navigation; `related:` is for machine-readable cross-referencing.
+
 [MADR]: https://github.com/zircote/structured-madr

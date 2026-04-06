@@ -12,7 +12,7 @@ Deploy forge-core skills, agents, and rules to all AI providers via Makefile.
 
 ## DONE WHEN
 
-- `make check` reports all items OK
+- `make validate` passes
 - `ls ~/.claude/skills/BuildSkill/SKILL.md` confirms skill deployment
 - `git config core.hooksPath` returns `.githooks`
 
@@ -51,7 +51,7 @@ git pull
 ### Check prerequisites
 
 ```sh
-make check
+make validate
 ```
 
 If `forge` shows MISSING, install forge-cli first:
