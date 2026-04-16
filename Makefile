@@ -2,12 +2,13 @@
 
 FORGE ?= forge
 
-.PHONY: help install validate test clean
+.PHONY: help install validate test release clean
 
 help:
 	@echo "  make install    deploy and activate git hooks"
 	@echo "  make validate   validate module structure and code"
 	@echo "  make test       validate + ADR self-tests"
+	@echo "  make release    build release tarball (no forge CLI needed to install)"
 	@echo "  make clean      remove build artifacts"
 
 install:
